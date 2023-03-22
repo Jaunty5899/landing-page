@@ -1,0 +1,22 @@
+.search-box {
+  display: flex;
+  width: 600px;
+  height: 50px;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.search-box > img {
+  height: 20px;
+  padding: 0px 15px;
+}
+.search-box > input {
+  flex-grow: 1;
+  border: none;
+  font-size: large;
+  outline: none;
+}
+.search-box > input::placeholder {
+  font-style: italic;
+}
