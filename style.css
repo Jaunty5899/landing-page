@@ -1,23 +1,31 @@
-.search-box {
+.search_box {
   display: flex;
-  width: 600px;
+  width: fit-content;
   height: 50px;
   align-items: center;
-  border: 1px solid black;
+  border: 2px solid lightgray;
   border-radius: 10px;
   box-sizing: border-box;
   padding: 0px 15px;
 }
-.search-box > img {
-  height: 20px;
-  padding-right: 15px;
+.search_box > img {
+  height: 40%;
 }
-.search-box > input {
+.search_box > input {
   flex-grow: 1;
   border: none;
   font-size: large;
   outline: none;
+  padding-left: 15px;
+  display: none;
 }
-.search-box > input::placeholder {
+.search_box > input::placeholder {
   font-style: italic;
+}
+
+.show {
+  display: block;
+}
+.expand {
+  width: 600px;
 }
