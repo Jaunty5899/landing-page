@@ -6,10 +6,11 @@
   border: 1px solid black;
   border-radius: 10px;
   box-sizing: border-box;
+  padding: 0px 15px;
 }
 .search-box > img {
   height: 20px;
-  padding: 0px 15px;
+  padding-right: 15px;
 }
 .search-box > input {
   flex-grow: 1;
