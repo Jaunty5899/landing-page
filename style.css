@@ -17,7 +17,7 @@
   font-size: large;
   outline: none;
   padding-left: 15px;
-  /* display: none; */
+  display: none;
 }
 .search_box > input::placeholder {
   font-style: italic;
