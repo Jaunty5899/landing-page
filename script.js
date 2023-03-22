@@ -1,8 +1,10 @@
 const search_box = document.querySelector(".search_box");
-const search_mini = document.querySelector("#search_mini");
-const search_input = document.querySelector("#search_input");
+const search_mini = search_box.querySelector("#search_mini");
+const search_input = search_box.querySelector("#search_input");
 
 search_mini.addEventListener("click", () => {
   search_box.classList.toggle("expand");
-  search_input.classList.toggle("show");
+  if (search_input.style.display == "none")
+    search_input.style.display = "block";
+  else search_input.style.display = "none";
 });

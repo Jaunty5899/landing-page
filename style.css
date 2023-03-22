@@ -11,21 +11,18 @@
 .search_box > img {
   height: 40%;
 }
-.search_box > input {
+#search_input {
   flex-grow: 1;
   border: none;
   font-size: large;
   outline: none;
   padding-left: 15px;
-  display: none;
+  /* display: none; */
 }
 .search_box > input::placeholder {
   font-style: italic;
 }
 
-.show {
-  display: block;
-}
 .expand {
   width: 600px;
 }
