@@ -7,8 +7,12 @@
   border-radius: 10px;
   box-sizing: border-box;
   padding: 0px 15px;
+  transition: width 1s linear;
 }
-.search_box > img {
+#search_mini {
+  height: 40%;
+}
+#search_mini {
   height: 40%;
 }
 #search_input {
@@ -19,10 +23,6 @@
   padding-left: 15px;
   display: none;
 }
-.search_box > input::placeholder {
+#search_input::placeholder {
   font-style: italic;
-}
-
-.expand {
-  width: 600px;
 }
