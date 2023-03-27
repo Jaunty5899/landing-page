@@ -4,7 +4,7 @@
 }
 body {
   background-color: var(--dark);
-  color: white;
+  color: var(--light);
 }
 .search_box {
   display: flex;
