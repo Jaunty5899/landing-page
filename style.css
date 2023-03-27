@@ -9,13 +9,10 @@
   padding: 0px 15px;
   transition: width 1s linear;
 }
-#search_mini {
+.search_mini {
   height: 40%;
 }
-#search_mini {
-  height: 40%;
-}
-#search_input {
+.search_input {
   flex-grow: 1;
   border: none;
   font-size: large;
@@ -23,6 +20,12 @@
   padding-left: 15px;
   display: none;
 }
-#search_input::placeholder {
+.search_input::placeholder {
   font-style: italic;
+}
+.expand {
+  width: 600px;
+}
+.visible {
+  display: block;
 }
