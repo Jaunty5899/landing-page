@@ -9,33 +9,38 @@ body {
 .search_box {
   display: flex;
   width: 50px;
-  height: 50px;
+  height: 30px;
   align-items: center;
   border: 2px solid lightgray;
   border-radius: 50px;
-  box-sizing: border-box;
-  padding: 0px 15px;
-  transition: width 1s linear;
+  transition: width 0.25s linear;
 }
-.search_mini {
-  height: 40%;
+.button {
+  height: inherit;
+  width: 50px;
+  border-radius: inherit;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+img {
+  width: 35%;
   filter: invert(100%);
 }
 .search_input {
-  border-radius: inherit;
   background-color: inherit;
   color: inherit;
   width: 100%;
   border: none;
   font-size: large;
   outline: none;
-  padding-left: 15px;
+  padding-right: 15px;
 }
 .search_input::placeholder {
   font-style: italic;
 }
 .expand {
-  width: 400px;
+  width: 300px;
 }
 .hide {
   display: none;
