@@ -6,14 +6,22 @@ body {
   background-color: var(--dark);
   color: var(--light);
 }
+.navbar {
+  height: 100px;
+  display: flex;
+  background-color: crimson;
+  align-items: center;
+  justify-content: flex-end;
+}
 .search_box {
   display: flex;
   width: 50px;
-  height: 30px;
+  height: 50px;
   align-items: center;
-  border: 2px solid lightgray;
+  border: 2px solid var(--light);
   border-radius: 50px;
-  transition: width 0.25s linear;
+  transition: width 0.2s linear;
+  margin-right: 20px;
 }
 .button {
   height: inherit;
@@ -32,6 +40,7 @@ img {
   color: inherit;
   width: 100%;
   border: none;
+  border-radius: inherit;
   font-size: large;
   outline: none;
   padding-right: 15px;
