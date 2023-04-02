@@ -12,12 +12,13 @@ body {
   font-family: var(--main-font);
 }
 .navbar {
-  width: fit-content;
+  width: 913px;
   height: 100px;
   display: flex;
   background-color: var(--darker);
   align-items: center;
   justify-content: flex-end;
+  padding: 0px 20px;
 }
 
 .logo {
@@ -28,11 +29,9 @@ body {
   display: flex;
   width: 50px;
   height: 50px;
-  align-items: center;
   border: 2px solid var(--retro-green);
   border-radius: 50px;
   transition: width 0.2s linear;
-  margin-right: var(--margin-r);
 }
 .button {
   height: inherit;
@@ -63,7 +62,7 @@ body {
 }
 
 .menu {
-  margin-left: var(--margin-r);
+  margin-right: auto;
 }
 .menu > ul {
   list-style-type: none;
