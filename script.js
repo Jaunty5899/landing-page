@@ -1,6 +1,8 @@
 const search_box = document.querySelector(".search_box");
 const search_btn = search_box.querySelector(".button");
 const search_input = search_box.querySelector(".search_input");
+const nav_logo = document.querySelector(".logo");
+const nav_menu = document.querySelector(".menu");
 
 search_btn.addEventListener("click", () => {
   let timeout, img_src;

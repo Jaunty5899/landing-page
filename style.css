@@ -3,7 +3,6 @@
   --darker: #141416;
   --retro-green: #64ffda;
   --light: #fffff7;
-  --margin-r: 20px;
   --main-font: "Roboto Condensed";
 }
 body {
@@ -12,7 +11,7 @@ body {
   font-family: var(--main-font);
 }
 .navbar {
-  width: 913px;
+  width: auto;
   height: 100px;
   display: flex;
   background-color: var(--darker);
@@ -54,6 +53,10 @@ body {
 .search_input::placeholder {
   font-style: italic;
 }
+
+.contract {
+  scale: 0.4;
+}
 .expand {
   width: 300px;
 }
@@ -63,6 +66,7 @@ body {
 
 .menu {
   margin-right: auto;
+  flex-shrink: 0;
 }
 .menu > ul {
   list-style-type: none;
@@ -70,7 +74,7 @@ body {
   margin: 0px;
   display: flex;
 }
-li {
+.menu > ul > li {
   background-color: var(--dark);
   display: flex;
   padding: 20px 20px;
