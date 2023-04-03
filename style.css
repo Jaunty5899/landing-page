@@ -11,7 +11,7 @@ body {
   font-family: var(--main-font);
 }
 .navbar {
-  width: auto;
+  width: 630px;
   height: 100px;
   display: flex;
   background-color: var(--darker);
@@ -22,6 +22,7 @@ body {
 
 .logo {
   scale: 0.5;
+  transition: scale 0.1s linear;
 }
 
 .search_box {
@@ -65,18 +66,36 @@ body {
 }
 
 .menu {
+  width: fit-content;
   margin-right: auto;
   flex-shrink: 0;
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+  margin-top: 23.4px;
+}
+.menu > .button {
+  height: 50px;
+  border: 2px solid var(--retro-green);
+  background-image: url(menu.svg);
+  border-radius: 0px;
 }
 .menu > ul {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
-  display: flex;
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  /* display: flex; */
 }
 .menu > ul > li {
   background-color: var(--dark);
-  display: flex;
   padding: 20px 20px;
-  align-items: center;
+  transition: background-color, color 0.2s linear;
+  user-select: none;
+  transition: all 0.4s linear;
+}
+.menu > ul > li:hover {
+  background-color: var(--retro-green);
+  color: var(--dark);
 }
