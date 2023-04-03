@@ -11,20 +11,22 @@ body {
   font-family: var(--main-font);
 }
 .navbar {
-  width: 630px;
+  width: 400px;
   height: 100px;
   display: flex;
   background-color: var(--darker);
   align-items: center;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   padding: 0px 20px;
 }
 
 .logo {
-  scale: 0.5;
-  transition: scale 0.1s linear;
+  width: fit-content;
 }
-
+.logo > img {
+  width: 130px;
+  transition: width 0.2s linear;
+}
 .search_box {
   display: flex;
   width: 50px;
@@ -32,6 +34,7 @@ body {
   border: 2px solid var(--retro-green);
   border-radius: 50px;
   transition: width 0.2s linear;
+  margin-left: auto;
 }
 .button {
   height: inherit;
@@ -55,9 +58,6 @@ body {
   font-style: italic;
 }
 
-.contract {
-  scale: 0.4;
-}
 .expand {
   width: 300px;
 }
@@ -66,9 +66,6 @@ body {
 }
 
 .menu {
-  width: fit-content;
-  margin-right: auto;
-  flex-shrink: 0;
   display: flex;
   align-self: flex-start;
   flex-direction: column;

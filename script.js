@@ -4,7 +4,7 @@ const search_input = search_box.querySelector(".search_input");
 const nav_menu = document.querySelector(".menu");
 const nav_btn = nav_menu.querySelector(".button");
 const ul = nav_menu.querySelector("ul");
-const logo = document.querySelector(".logo");
+const logo = document.querySelector("img");
 let opaque;
 
 nav_btn.addEventListener("click", () => {
@@ -13,17 +13,19 @@ nav_btn.addEventListener("click", () => {
 });
 
 search_btn.addEventListener("click", () => {
-  let timeout, img_src;
-  logo.classList.toggle("contract");
+  let timeout, img_src, len;
   search_box.classList.toggle("expand");
   if (!search_input.classList.contains("hide")) {
     timeout = 0.2 * 1000 - 10;
     img_src = "search";
+    len = 130;
   } else {
     timeout = 10;
     img_src = "cross";
+    len = 100;
   }
   setTimeout(() => {
+    logo.style.width = `${len}px`;
     search_btn.style.background = `center / 35% no-repeat url(${img_src}.svg)`;
     search_input.classList.toggle("hide");
   }, timeout);
