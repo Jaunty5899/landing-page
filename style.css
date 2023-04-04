@@ -11,7 +11,7 @@ body {
   font-family: var(--main-font);
 }
 .navbar {
-  width: 400px;
+  width: 360px;
   height: 100px;
   display: flex;
   background-color: var(--darker);
