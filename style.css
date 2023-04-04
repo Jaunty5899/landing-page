@@ -1,0 +1,97 @@
+:root {
+  --dark: #282830;
+  --darker: #141416;
+  --retro-green: #64ffda;
+  --light: #fffff7;
+  --main-font: "Roboto Condensed";
+}
+body {
+  background-color: var(--dark);
+  color: var(--retro-green);
+  font-family: var(--main-font);
+}
+.container {
+  display: flex;
+}
+.navbar {
+  width: 600px;
+  height: 100px;
+  display: flex;
+  background-color: var(--darker);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  /* flex-wrap: wrap; */
+}
+
+.logo {
+  width: fit-content;
+  margin-left: auto;
+  padding: 0px 10px;
+}
+.logo > img {
+  width: 130px;
+  transition: width 0.2s linear;
+}
+.search_box {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--retro-green);
+  border-radius: 50px;
+  transition: width 0.2s linear;
+}
+.button {
+  height: inherit;
+  width: 50px;
+  border-radius: inherit;
+  background: center / 35% no-repeat url(search.svg);
+  flex-shrink: 0;
+}
+.search_input {
+  background-color: transparent;
+  color: inherit;
+  font-family: var(--main-font);
+  width: 100%;
+  border: none;
+  border-radius: inherit;
+  font-size: large;
+  outline: none;
+  padding-right: 15px;
+}
+.search_input::placeholder {
+  font-style: italic;
+}
+
+.expand {
+  width: 200px;
+}
+.hide {
+  display: none;
+}
+
+.menu > .button {
+  height: 50px;
+  border: 2px solid var(--retro-green);
+  background-image: url(menu.svg);
+  border-radius: 0px;
+}
+.menu > ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  position: absolute;
+}
+.menu > ul > li {
+  background-color: var(--dark);
+  padding: 20px 20px;
+  transition: background-color, color 0.2s linear;
+  user-select: none;
+  transition: all 0.4s linear;
+}
+.menu > ul > li:hover {
+  background-color: var(--retro-green);
+  color: var(--dark);
+}
