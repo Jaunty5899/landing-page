@@ -22,7 +22,7 @@ search_btn.addEventListener("click", () => {
   } else {
     timeout = 10;
     img_src = "cross";
-    len = 100;
+    len = 80;
   }
   logo.style.width = `${len}px`;
   setTimeout(() => {
