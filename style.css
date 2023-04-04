@@ -95,9 +95,3 @@ body {
   background-color: var(--retro-green);
   color: var(--dark);
 }
-
-}
-.menu > ul > li:hover {
-  background-color: var(--retro-green);
-  color: var(--dark);
-}
