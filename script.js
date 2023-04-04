@@ -7,12 +7,12 @@ const ul = nav_menu.querySelector("ul");
 const logo = document.querySelector("img");
 let opaque;
 
-nav_btn.addEventListener("click", () => {
+const opacity = () => {
   opaque = opaque ? 0 : 1;
   ul.style.opacity = opaque;
-});
+};
 
-search_btn.addEventListener("click", () => {
+const search_hd = () => {
   let timeout, img_src, len;
   search_box.classList.toggle("expand");
   if (!search_input.classList.contains("hide")) {
@@ -29,4 +29,17 @@ search_btn.addEventListener("click", () => {
     search_btn.style.background = `center / 35% no-repeat url(${img_src}.svg)`;
     search_input.classList.toggle("hide");
   }, timeout);
+};
+
+nav_btn.addEventListener("click", () => {
+  opacity();
+  if (!search_input.classList.contains("hide")) {
+    search_hd();
+  }
+});
+search_btn.addEventListener("click", () => {
+  search_hd();
+  if (opaque) {
+    opacity();
+  }
 });
