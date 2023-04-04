@@ -24,8 +24,8 @@ search_btn.addEventListener("click", () => {
     img_src = "cross";
     len = 100;
   }
+  logo.style.width = `${len}px`;
   setTimeout(() => {
-    logo.style.width = `${len}px`;
     search_btn.style.background = `center / 35% no-repeat url(${img_src}.svg)`;
     search_input.classList.toggle("hide");
   }, timeout);
