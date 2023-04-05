@@ -80,8 +80,8 @@ body {
   opacity: 0;
   transition: opacity 0.1s linear;
   position: absolute;
-  right: -1.6px;
-  top: 52px;
+  right: -2px;
+  top: 50px;
   border: 2px solid var(--retro-green);
   border-left: none;
   border-top: none;
@@ -89,7 +89,7 @@ body {
 }
 .menu > ul > li {
   background-color: var(--dark);
-  padding: 20px 20px;
+  padding: 10px 20px;
   transition: background-color, color 0.2s linear;
   user-select: none;
   transition: all 0.4s linear;
@@ -97,4 +97,23 @@ body {
 .menu > ul > li:hover {
   background-color: var(--retro-green);
   color: var(--dark);
+}
+
+.login {
+  width: 170px;
+  position: absolute;
+  top: 50px;
+  right: -2px;
+  border: 2px solid var(--retro-green);
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  /* z-index: -1; */
+  transition: top 0.5s ease-in-out;
+}
+.log_switch {
+  background-color: var(--retro-green);
+  font-family: var(--main-font);
+  border: none;
+  width: fit-content;
 }
