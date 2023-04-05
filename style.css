@@ -103,7 +103,7 @@ body {
   width: 170px;
   position: absolute;
   top: 50px;
-  /* right: 0px; */
+  right: -2px;
   border: 2px solid var(--retro-green);
   padding: 10px;
 }
