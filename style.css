@@ -20,11 +20,10 @@ body {
   background-color: var(--darker);
   align-items: center;
   justify-content: space-between;
-  padding: 0px 20px;
+  padding: 0px 15px;
 }
 .logo {
   display: flex;
-  padding-right: 20px;
 }
 .logo > img {
   width: 130px;
@@ -57,7 +56,7 @@ body {
   border-radius: inherit;
   font-size: large;
   outline: none;
-  padding-right: 15px;
+  padding: 0px;
 }
 .search_input::placeholder {
   font-style: italic;
