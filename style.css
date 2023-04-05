@@ -41,7 +41,7 @@ body {
   /* border-radius: 50px; */
   transition: width 0.2s linear;
   position: absolute;
-  left: 73.2px;
+  left: 70px;
 }
 .button {
   height: inherit;

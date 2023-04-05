@@ -5,6 +5,7 @@ const nav_menu = document.querySelector(".menu");
 const nav_btn = nav_menu.querySelector(".button");
 const ul = nav_menu.querySelector("ul");
 const logo = document.querySelector("img");
+const doc = document.querySelector("html");
 let opaque;
 
 const opacity = () => {
@@ -41,5 +42,15 @@ search_btn.addEventListener("click", () => {
   search_hd();
   if (opaque) {
     opacity();
+  }
+});
+doc.addEventListener("click", (e) => {
+  console.log(e.target);
+  if (e.target.className !== "button") {
+    if (!search_input.classList.contains("hide")) {
+      search_hd();
+    } else if (opaque) {
+      opacity();
+    }
   }
 });
