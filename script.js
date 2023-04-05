@@ -5,15 +5,21 @@ const nav_menu = document.querySelector(".menu");
 const nav_btn = nav_menu.querySelector(".button");
 const ul = nav_menu.querySelector("ul");
 const logo = document.querySelector("img");
-const doc = document.querySelector("html");
+const login_btn_menu = ul.querySelector("#login");
+const login_div = nav_menu.querySelector(".login");
+// const doc = document.querySelector("html");
 let opaque = 0;
+
+const login_tog = () => {
+  login_div.classList.toggle("hide");
+};
 
 const opacity = () => {
   opaque = opaque ? 0 : 1;
   ul.style.opacity = opaque;
 };
 
-const search_hd = () => {
+const search_tog = () => {
   let timeout, img_src, len;
   search_box.classList.toggle("expand");
   if (!search_input.classList.contains("hide")) {
@@ -33,16 +39,27 @@ const search_hd = () => {
   }, timeout);
 };
 
+login_btn_menu.addEventListener("click", () => {
+  login_tog();
+  opacity();
+});
+
 nav_btn.addEventListener("click", () => {
   opacity();
   if (!search_input.classList.contains("hide")) {
-    search_hd();
+    search_tog();
+  }
+  if (!login_div.classList.contains("hide")) {
+    login_tog();
   }
 });
 search_btn.addEventListener("click", () => {
-  search_hd();
+  search_tog();
   if (opaque) {
     opacity();
+  }
+  if (!login_div.classList.contains("hide")) {
+    login_tog();
   }
 });
 // doc.addEventListener("click", (e) => {

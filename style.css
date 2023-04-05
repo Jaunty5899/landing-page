@@ -103,17 +103,18 @@ body {
   width: 170px;
   position: absolute;
   top: 50px;
-  right: -2px;
+  /* right: 0px; */
   border: 2px solid var(--retro-green);
   padding: 10px;
-  display: flex;
-  justify-content: flex-end;
-  /* z-index: -1; */
-  transition: top 0.5s ease-in-out;
 }
 .log_switch {
   background-color: var(--retro-green);
   font-family: var(--main-font);
   border: none;
   width: fit-content;
+}
+
+form > input[type="text"],
+form > input[type="password"] {
+  margin-bottom: 5px;
 }
