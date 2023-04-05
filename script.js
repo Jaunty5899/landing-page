@@ -6,7 +6,7 @@ const nav_btn = nav_menu.querySelector(".button");
 const ul = nav_menu.querySelector("ul");
 const logo = document.querySelector("img");
 const doc = document.querySelector("html");
-let opaque;
+let opaque = 0;
 
 const opacity = () => {
   opaque = opaque ? 0 : 1;
@@ -24,6 +24,7 @@ const search_hd = () => {
     timeout = 10;
     img_src = "cross";
     len = 80;
+    search_input.value = "";
   }
   logo.style.width = `${len}px`;
   setTimeout(() => {
@@ -44,13 +45,16 @@ search_btn.addEventListener("click", () => {
     opacity();
   }
 });
-doc.addEventListener("click", (e) => {
-  console.log(e.target);
-  if (e.target.className !== "button") {
-    if (!search_input.classList.contains("hide")) {
-      search_hd();
-    } else if (opaque) {
-      opacity();
-    }
-  }
-});
+// doc.addEventListener("click", (e) => {
+//   console.log(e.target);
+//   if (
+//     e.target.parentNode.className !== "search_box" &&
+//     e.target.parentNode.className !== "menu"
+//   ) {
+//     if (!search_input.classList.contains("hide")) {
+//       search_hd();
+//     } else if (opaque) {
+//       opacity();
+//     }
+//   }
+// });
