@@ -23,7 +23,7 @@ const search_hd = () => {
   } else {
     timeout = 10;
     img_src = "cross";
-    len = 80;
+    len = 100;
     search_input.value = "";
   }
   logo.style.width = `${len}px`;
