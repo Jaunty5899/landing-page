@@ -7,8 +7,12 @@ const ul = nav_menu.querySelector("ul");
 const logo = document.querySelector("img");
 const login_btn_menu = ul.querySelector("#login");
 const login_div = nav_menu.querySelector(".login");
-// const doc = document.querySelector("html");
+const backdrop = document.querySelector(".backdrop");
 let opaque = 0;
+
+const show_backdrop = () => {
+  backdrop.classList.remove("hide");
+};
 
 const login_tog = () => {
   login_div.classList.toggle("top");
@@ -16,6 +20,8 @@ const login_tog = () => {
 
 const opacity = () => {
   opaque = opaque ? 0 : 1;
+  const pointEvenVal = opaque == 1 ? "auto" : "none";
+  ul.style.pointerEvents = pointEvenVal;
   ul.style.opacity = opaque;
 };
 
@@ -40,11 +46,13 @@ const search_tog = () => {
 };
 
 login_btn_menu.addEventListener("click", () => {
+  show_backdrop();
   opacity();
   login_tog();
 });
 
 nav_btn.addEventListener("click", () => {
+  show_backdrop();
   opacity();
   if (!search_input.classList.contains("hide")) {
     search_tog();
@@ -53,7 +61,9 @@ nav_btn.addEventListener("click", () => {
     login_tog();
   }
 });
+
 search_btn.addEventListener("click", () => {
+  show_backdrop();
   search_tog();
   if (opaque) {
     opacity();
@@ -62,16 +72,14 @@ search_btn.addEventListener("click", () => {
     login_tog();
   }
 });
-// doc.addEventListener("click", (e) => {
-//   console.log(e.target);
-//   if (
-//     e.target.parentNode.className !== "search_box" &&
-//     e.target.parentNode.className !== "menu"
-//   ) {
-//     if (!search_input.classList.contains("hide")) {
-//       search_hd();
-//     } else if (opaque) {
-//       opacity();
-//     }
-//   }
-// });
+backdrop.addEventListener("click", () => {
+  if (opaque) {
+    opacity();
+  }
+  if (login_div.classList.contains("top")) {
+    login_tog();
+  }
+  if (!search_input.classList.contains("hide")) {
+    search_tog();
+  }
+});
