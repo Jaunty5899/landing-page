@@ -9,6 +9,7 @@ body {
   background-color: var(--dark);
   color: var(--retro-green);
   font-family: var(--main-font);
+  margin: 0px;
 }
 .container {
   display: flex;
@@ -21,6 +22,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0px 15px;
+  position: relative;
 }
 .logo {
   display: flex;
@@ -32,7 +34,6 @@ body {
 .tools {
   display: flex;
   border: 2px solid var(--retro-green);
-  position: relative;
 }
 .search_box {
   display: flex;
@@ -62,12 +63,6 @@ body {
   font-style: italic;
 }
 
-.expand {
-  width: 170px;
-}
-.hide {
-  display: none;
-}
 .menu > .button {
   height: 50px;
   background-image: url(menu.svg);
@@ -80,8 +75,8 @@ body {
   opacity: 0;
   transition: opacity 0.1s linear;
   position: absolute;
-  right: -2px;
-  top: 50px;
+  right: 15px;
+  top: 77px;
   border: 2px solid var(--retro-green);
   border-left: none;
   border-top: none;
@@ -102,19 +97,38 @@ body {
 .login {
   width: 170px;
   position: absolute;
-  top: 50px;
-  right: -2px;
+  top: -10px;
+  right: 0px;
   border: 2px solid var(--retro-green);
   padding: 10px;
+  z-index: -1;
+  transition: top 0.4s ease-in-out;
 }
 .log_switch {
   background-color: var(--retro-green);
   font-family: var(--main-font);
-  border: none;
+  border: 2px solid var(--retro-green);
   width: fit-content;
+  padding: 5px 10px;
+  transition: all 0.4s linear;
+  position: relative;
+  left: 24.5px;
 }
-
+.log_switch:hover {
+  background-color: transparent;
+  color: var(--retro-green);
+}
 form > input[type="text"],
 form > input[type="password"] {
   margin-bottom: 5px;
+}
+
+.hide {
+  display: none;
+}
+.expand {
+  width: 170px;
+}
+.top {
+  top: 100px;
 }

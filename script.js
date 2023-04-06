@@ -12,6 +12,7 @@ let opaque = 0;
 
 const login_tog = () => {
   login_div.classList.toggle("hide");
+  login_div.classList.add("top");
 };
 
 const opacity = () => {
