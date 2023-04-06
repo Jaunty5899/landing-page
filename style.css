@@ -95,7 +95,6 @@ body {
 .menu > ul > li {
   background-color: var(--dark);
   padding: 10px 20px;
-  transition: background-color, color 0.2s linear;
   user-select: none;
   transition: all 0.4s linear;
 }
@@ -107,14 +106,20 @@ body {
 .login {
   width: 170px;
   position: absolute;
-  top: -1000px;
-  right: 0px;
+  top: -50px;
+  /* (navbar width + padding) - (login width + border + padding)  */
+  left: calc((600px + 30px) - (170px + 4px + 20px));
   border: 2px solid var(--retro-green);
   padding: 10px;
-  z-index: -1000;
-  transition: top 0.4s ease-in-out;
+  z-index: -1;
+  opacity: 0;
+  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
   background-color: var(--darker);
-  isolation: isolate;
+}
+
+.login.show {
+  opacity: 1;
+  top: 110px;
 }
 
 form > input[type="text"],
@@ -140,8 +145,4 @@ form > input[type="password"] {
 }
 .expand {
   width: 170px;
-}
-.top {
-  top: 100px;
-  /* z-index: 101; */
 }
