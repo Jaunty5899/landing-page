@@ -11,8 +11,7 @@ const login_div = nav_menu.querySelector(".login");
 let opaque = 0;
 
 const login_tog = () => {
-  login_div.classList.toggle("hide");
-  login_div.classList.add("top");
+  login_div.classList.toggle("top");
 };
 
 const opacity = () => {
@@ -41,8 +40,8 @@ const search_tog = () => {
 };
 
 login_btn_menu.addEventListener("click", () => {
-  login_tog();
   opacity();
+  login_tog();
 });
 
 nav_btn.addEventListener("click", () => {
@@ -50,7 +49,7 @@ nav_btn.addEventListener("click", () => {
   if (!search_input.classList.contains("hide")) {
     search_tog();
   }
-  if (!login_div.classList.contains("hide")) {
+  if (login_div.classList.contains("top")) {
     login_tog();
   }
 });
@@ -59,7 +58,7 @@ search_btn.addEventListener("click", () => {
   if (opaque) {
     opacity();
   }
-  if (!login_div.classList.contains("hide")) {
+  if (login_div.classList.contains("top")) {
     login_tog();
   }
 });
