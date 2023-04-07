@@ -6,16 +6,38 @@ const nav_btn = nav_menu.querySelector(".button");
 const ul = nav_menu.querySelector("ul");
 const logo = document.querySelector("img");
 const login_btn_menu = ul.querySelector("#login");
-const login_div = nav_menu.querySelector(".login");
+const login_div = document.querySelector(".login");
 const backdrop = document.querySelector(".backdrop");
 let opaque = 0;
 
-const show_backdrop = () => {
-  backdrop.classList.remove("hide");
+const sleep = (ms) => {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+const showBackdrop = () => {
+  backdrop.style.display = "block";
 };
 
-const login_tog = () => {
-  login_div.classList.toggle("top");
+const hideBackdrop = () => {
+  backdrop.style.display = "none";
+}
+
+const isLoginVisible = () => {
+  return login_div.classList.contains("show");
+}
+
+const isSearchExpanded = () => {
+  return search_box.classList.contains("expand");
+}
+
+const login_tog = async () => {
+  login_div.classList.toggle("show");
+  if (isLoginVisible()) {
+    await sleep(500);
+    login_div.style.zIndex = 100;
+  } else {
+    login_div.style.zIndex = -1;
+  }
 };
 
 const opacity = () => {
@@ -23,6 +45,7 @@ const opacity = () => {
   const pointEvenVal = opaque == 1 ? "auto" : "none";
   ul.style.pointerEvents = pointEvenVal;
   ul.style.opacity = opaque;
+  opaque && showBackdrop();
 };
 
 const search_tog = () => {
@@ -46,40 +69,41 @@ const search_tog = () => {
 };
 
 login_btn_menu.addEventListener("click", () => {
-  show_backdrop();
+  showBackdrop();
   opacity();
   login_tog();
 });
 
 nav_btn.addEventListener("click", () => {
-  show_backdrop();
-  opacity();
+  showBackdrop();
   if (!search_input.classList.contains("hide")) {
     search_tog();
+    hideBackdrop();
   }
-  if (login_div.classList.contains("top")) {
+  if (isLoginVisible()) {
     login_tog();
+    hideBackdrop();
   }
+  opacity();
 });
 
 search_btn.addEventListener("click", () => {
-  show_backdrop();
+  if (opaque) {
+    opacity();
+    hideBackdrop();
+  }
+  if (isLoginVisible()) {
+    login_tog();
+    hideBackdrop();
+  }
+  !isSearchExpanded() ? showBackdrop() : hideBackdrop();
   search_tog();
-  if (opaque) {
-    opacity();
-  }
-  if (login_div.classList.contains("top")) {
-    login_tog();
-  }
 });
+
 backdrop.addEventListener("click", () => {
-  if (opaque) {
-    opacity();
-  }
-  if (login_div.classList.contains("top")) {
-    login_tog();
-  }
-  if (!search_input.classList.contains("hide")) {
-    search_tog();
-  }
+  opaque && opacity();
+  isLoginVisible() && login_tog();
+  isSearchExpanded() && search_tog();
+  hideBackdrop();
 });
+
