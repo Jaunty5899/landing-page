@@ -9,7 +9,7 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  background-color: red;
+  background-color: transparent;
   opacity: 0.4;
   z-index: 99;
 }
@@ -81,6 +81,7 @@ body {
   border-radius: 0px;
 }
 .menu > ul {
+  width: 104px;
   list-style-type: none;
   padding: 0px;
   margin: 0px;
@@ -88,7 +89,7 @@ body {
   transition: opacity 0.1s linear;
   position: absolute;
   right: 15px;
-  top: 77px;
+  top: 76.5px;
   border: 2px solid var(--retro-green);
   border-top: none;
 }
@@ -108,8 +109,9 @@ body {
   position: absolute;
   top: -50px;
   /* (navbar width + padding) - (login width + border + padding)  */
-  left: calc((600px + 30px) - (170px + 4px + 20px));
+  left: calc(min(630px, 100vw) - (170px + 4px + 20px));
   border: 2px solid var(--retro-green);
+  border-top: none;
   padding: 10px;
   z-index: -1;
   opacity: 0;
@@ -119,7 +121,7 @@ body {
 
 .login.show {
   opacity: 1;
-  top: 110px;
+  top: 100px;
 }
 
 form > input[type="text"],

@@ -11,8 +11,8 @@ const backdrop = document.querySelector(".backdrop");
 let opaque = 0;
 
 const sleep = (ms) => {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
 
 const showBackdrop = () => {
   backdrop.style.display = "block";
@@ -20,15 +20,15 @@ const showBackdrop = () => {
 
 const hideBackdrop = () => {
   backdrop.style.display = "none";
-}
+};
 
 const isLoginVisible = () => {
   return login_div.classList.contains("show");
-}
+};
 
 const isSearchExpanded = () => {
   return search_box.classList.contains("expand");
-}
+};
 
 const login_tog = async () => {
   login_div.classList.toggle("show");
@@ -106,4 +106,3 @@ backdrop.addEventListener("click", () => {
   isSearchExpanded() && search_tog();
   hideBackdrop();
 });
-
