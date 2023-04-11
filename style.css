@@ -5,19 +5,12 @@
   --light: #fffff7;
   --main-font: "Roboto Condensed";
 }
-.backdrop {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background-color: transparent;
-  opacity: 0.4;
-  z-index: 99;
+* {
+  font-family: var(--main-font);
 }
 body {
   background-color: var(--dark);
   color: var(--retro-green);
-  font-family: var(--main-font);
-  margin: 0px;
 }
 .container {
   display: flex;
@@ -41,9 +34,7 @@ body {
 }
 .tools {
   display: flex;
-  min-width: 104px;
   border: 2px solid var(--retro-green);
-  z-index: 100;
 }
 .search_box {
   display: flex;
@@ -61,19 +52,16 @@ body {
 .search_input {
   background-color: transparent;
   color: inherit;
-  font-family: var(--main-font);
   width: 100%;
   border: none;
   border-radius: inherit;
   font-size: large;
   outline: none;
   padding: 0px;
+  transition: all 0.2s linear;
 }
 .search_input::placeholder {
   font-style: italic;
-}
-.menu {
-  z-index: 99;
 }
 .menu > .button {
   height: 50px;
@@ -81,7 +69,7 @@ body {
   border-radius: 0px;
 }
 .menu > ul {
-  width: 104px;
+  width: 100px;
   list-style-type: none;
   padding: 0px;
   margin: 0px;
@@ -89,14 +77,17 @@ body {
   transition: opacity 0.1s linear;
   position: absolute;
   right: 15px;
-  top: 76.5px;
+  top: 77px;
   border: 2px solid var(--retro-green);
   border-top: none;
+  background-color: var(--darker);
+  text-align: end;
+  white-space: nowrap;
+  cursor: default;
+  pointer-events: none;
 }
 .menu > ul > li {
-  background-color: var(--dark);
   padding: 10px 20px;
-  user-select: none;
   transition: all 0.4s linear;
 }
 .menu > ul > li:hover {
@@ -108,8 +99,7 @@ body {
   width: 170px;
   position: absolute;
   top: -50px;
-  /* (navbar width + padding) - (login width + border + padding)  */
-  left: calc(min(630px, 100vw) - (170px + 4px + 20px));
+  right: 0px;
   border: 2px solid var(--retro-green);
   border-top: none;
   padding: 10px;
@@ -126,24 +116,32 @@ body {
 
 form > input[type="text"],
 form > input[type="password"] {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+}
+.switch_container {
+  display: flex;
 }
 .log_switch {
   background-color: var(--retro-green);
-  font-family: var(--main-font);
   border: 2px solid var(--retro-green);
-  width: fit-content;
+  margin-top: 5px;
   padding: 5px 10px;
   transition: all 0.4s linear;
-  position: relative;
-  left: 24.5px;
+  width: 100%;
+}
+.log_switch:nth-child(1) {
+  border-right: none;
+}
+.log_switch:nth-child(2) {
+  border-left: none;
 }
 .log_switch:hover {
   background-color: transparent;
   color: var(--retro-green);
 }
 .hide {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
 .expand {
   width: 170px;

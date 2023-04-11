@@ -5,10 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://yarnpkg.com/en/package/normalize.css"
-    />
+    <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +16,6 @@
     />
   </head>
   <body>
-    <div class="backdrop hide"></div>
     <div class="container">
       <div class="navbar">
         <div class="logo">
@@ -38,27 +34,29 @@
               <li id="login">Sign-in/up</li>
             </ul>
           </div>
+          <div class="login">
+            <form>
+              <input
+                class="search_input"
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Username"
+              />
+              <input
+                class="search_input"
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+              />
+              <div class="switch_container">
+                <input class="log_switch" type="submit" value="Login" />
+                <input class="log_switch" type="button" value="Register" />
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-      <div class="login">
-        <form>
-          <input
-            class="search_input"
-            type="text"
-            name="username"
-            id="username"
-            placeholder="Username"
-          />
-          <input
-            class="search_input"
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-          />
-          <input class="log_switch" type="submit" value="Login" />
-          <input class="log_switch" type="button" value="Register" />
-        </form>
       </div>
     </div>
     <script src="script.js"></script>
