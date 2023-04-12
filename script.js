@@ -7,6 +7,8 @@ const ul = nav_menu.querySelector("ul");
 const logo = document.querySelector("img");
 const login_btn_menu = ul.querySelector("#login");
 const login_div = document.querySelector(".login");
+const signup_btn = document.querySelector(".signup");
+const signup_div = document.querySelector(".section");
 let opaque = 0;
 
 const isLoginVisible = () => {
@@ -19,6 +21,10 @@ const isSearchExpanded = () => {
 
 const login_tog = () => {
   login_div.classList.toggle("show");
+};
+
+const signup_tog = () => {
+  signup_div.classList.toggle("show");
 };
 
 const opacity = () => {
@@ -70,9 +76,15 @@ search_btn.addEventListener("click", () => {
   search_tog();
 });
 
-document.addEventListener("click", (e) => {
-  if (e.target.closest(".tools")) return;
+signup_btn.addEventListener("click", () => {
+  signup_tog();
+  if (isLoginVisible()) {
+    login_tog();
+  }
+});
 
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".tools") || e.target.closest(".section")) return;
   if (!search_input.classList.contains("hide")) {
     search_tog();
   }
@@ -81,5 +93,8 @@ document.addEventListener("click", (e) => {
   }
   if (isLoginVisible()) {
     login_tog();
+  }
+  if (signup_div.classList.contains("show")) {
+    signup_tog();
   }
 });
