@@ -63,6 +63,9 @@ nav_btn.addEventListener("click", () => {
   if (isLoginVisible()) {
     login_tog();
   }
+  if (signup_div.classList.contains("show")) {
+    signup_tog();
+  }
   opacity();
 });
 
@@ -72,6 +75,9 @@ search_btn.addEventListener("click", () => {
   }
   if (isLoginVisible()) {
     login_tog();
+  }
+  if (signup_div.classList.contains("show")) {
+    signup_tog();
   }
   search_tog();
 });
@@ -84,7 +90,12 @@ signup_btn.addEventListener("click", () => {
 });
 
 document.addEventListener("click", (e) => {
-  if (e.target.closest(".tools") || e.target.closest(".section")) return;
+  if (
+    e.target.closest(".tools") ||
+    e.target.closest(".section") ||
+    e.target.closest(".login")
+  )
+    return;
   if (!search_input.classList.contains("hide")) {
     search_tog();
   }

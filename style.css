@@ -4,7 +4,7 @@
   --retro-green: #64ffda;
   --light: #fffff7;
   --main-font: "Roboto Condensed";
-  --width:600px;
+  --width: 600px;
 }
 * {
   font-family: var(--main-font);
@@ -15,9 +15,9 @@ body {
 }
 .container {
   display: flex;
+  flex-direction: column;
 }
 .navbar {
-  width: var(--width);
   height: 100px;
   display: flex;
   background-color: var(--darker);
@@ -26,9 +26,6 @@ body {
   padding: 0px 15px;
   position: relative;
 }
-.logo {
-  display: flex;
-}
 .logo > img {
   width: 130px;
   transition: width 0.2s linear;
@@ -36,6 +33,7 @@ body {
 .tools {
   display: flex;
   border: 2px solid var(--retro-green);
+  position: relative;
 }
 .search_box {
   display: flex;
@@ -77,8 +75,8 @@ body {
   opacity: 0;
   transition: opacity 0.1s linear;
   position: absolute;
-  right: 15px;
-  top: 77px;
+  right: -1.6px;
+  top: 51.6px;
   border: 2px solid var(--retro-green);
   border-top: none;
   background-color: var(--darker);
@@ -98,27 +96,22 @@ body {
 
 .login {
   width: 170px;
-  position: absolute;
-  top: -50px;
-  right: 0px;
   border: 2px solid var(--retro-green);
   border-top: none;
   padding: 10px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  top: -25px;
   z-index: -1;
-  opacity: 0;
-  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: top 0.5s ease-in-out;
   background-color: var(--darker);
 }
 
 .login.show {
-  opacity: 1;
   top: 100px;
 }
 
-form > input[type="text"],
-form > input[type="password"] {
-  margin-bottom: 10px;
-}
 .switch_container {
   display: flex;
 }
@@ -149,27 +142,28 @@ form > input[type="password"] {
 }
 
 .section {
-  max-width: var(--width);
-  padding: 15px;
-  position: absolute;
-  top: 100px;
+  display: flex;
+  width: 100%;
+  /* padding: 15px; */
   z-index: -2;
   background-color: var(--darker);
-  opacity: 0;
-  display: flex;
   position: absolute;
-  top :0px;
+  top: -100px;
+  left: 0px;
   transition: all 0.4s linear;
 }
-.section > form {
+form {
   display: flex;
-  align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
+  width: inherit;
+}
+.section form {
+  padding: 15px;
 }
 .section input {
   margin: 0px !important;
 }
 .section.show {
-  opacity: 1;
   top: 100px;
 }
