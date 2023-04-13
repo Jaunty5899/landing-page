@@ -104,7 +104,7 @@ body {
   right: 0px;
   top: -25px;
   z-index: -1;
-  transition: top 0.5s ease-in-out;
+  transition: top 0.2s ease-in-out;
   background-color: var(--darker);
 }
 
@@ -144,13 +144,12 @@ body {
 .section {
   display: flex;
   width: 100%;
-  /* padding: 15px; */
   z-index: -2;
   background-color: var(--darker);
   position: absolute;
   top: -100px;
   left: 0px;
-  transition: all 0.4s linear;
+  transition: all 0.2s linear;
 }
 form {
   display: flex;
